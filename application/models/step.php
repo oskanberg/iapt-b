@@ -19,7 +19,7 @@ class Step extends CI_Model {
         return $this->operation;
     }
 
-    public function set_ingredients($value) {
+    public function set_ingredients(array $value) {
         $this->ingredients = $value;
     }
 
