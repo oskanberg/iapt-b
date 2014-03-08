@@ -6,8 +6,11 @@ class Ingredient extends CI_Model {
     private $description;
     private $link;
 
-    function __construct() {
+    function __construct($name, $description, $link) {
         parent::__construct();
+        $this->name = $name;
+        $this->description = $description;
+        $this->link = $link;
     }
 
     public function get_name() {
