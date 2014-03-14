@@ -110,7 +110,16 @@ $autoload['language'] = array();
 */
 
 $autoload['model'] = array();
+$autoload['models'] = array(); //clear the models array as these are loaded by the datamapper orm
 
+/*
+| -------------------------------------------------------------------
+|  Auto-load datamapper config and database shiz
+| -------------------------------------------------------------------
+|
+*/
+
+$autoload['libraries'] = array('database', 'datamapper');
 
 /* End of file autoload.php */
 /* Location: ./application/config/autoload.php */

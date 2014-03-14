@@ -47,6 +47,7 @@
 
 $active_group = 'default';
 $active_record = TRUE;
+$db['default']['dbprefix'] = ""; //clea the db prefix for datamapper to laod.
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
