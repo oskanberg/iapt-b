@@ -1,22 +1,20 @@
 #<?php
 
-class Recipe extends CI_Model {
+class Recipe extends DataMapper {
 
-    private $title;
-    private $type;
-    private $serves;
-    private $narrative_recipe;
-    private $segmented_recipe;
-    private $step_by_step_recipe;
+    // private $title;
+    // private $type;
+    //private $serves;
+    //private $narrative_recipe;
+    //private $segmented_recipe;
+    //private $step_by_step_recipe;
 
-    function __construct($title, $type, $serves, $narrative_recipe, $segmented_recipe, $step_by_step_recipe) {
-        parent::__construct();
-        $this->title = $title;
-        $this->type = $type;
-        $this->serves = $serves;
-        $this->narrative_recipe = $narrative_recipe;
-        $this->segmented_recipe = $segmented_recipe;
-        $this->step_by_step_recipe = $step_by_step_recipe;
+    //arrays for storing relationships
+    var $has_one = array();
+    var $has_many = array('step');
+
+    function __construct($id = NULL) {
+        parent::__construct($id);
     }
 
     public function get_format_narrative() {

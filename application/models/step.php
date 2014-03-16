@@ -1,14 +1,12 @@
 #<?php
 
-class Step extends CI_Model {
+class Step extends DataMapper {
 
-    private $ingredients;
-    private $operation;
+    var $has_one = array('recipe');
+    var $has_many = array('ingredient');
 
-    function __construct($ingredients, $operation) {
-        parent::__construct();
-        $this->ingredients = $ingredients;
-        $this->operation = $operation;
+    function __construct($id = NULL) {
+        parent::__construct($id);
     }
 
     public function get_ingredients() {

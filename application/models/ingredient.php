@@ -1,39 +1,37 @@
 #<?php
 
-class Ingredient extends CI_Model {
+class Ingredient extends DataMapper {
 
-    private $name;
-    private $description;
-    private $link;
+    //arrays for storing relationships
+    var $has_one = array();
+    var $has_many = array('step');
 
-    function __construct($name, $description, $link) {
-        parent::__construct();
-        $this->name = $name;
-        $this->description = $description;
-        $this->link = $link;
-    }
+    var $validation = array(
+        'name' => array(
+            // name is required, and cannot be more than 255 characters long.
+            'rules' => array('required', 'max_length' => 255),
+            'label' => 'Ingredient'
+        ),
+        'description' => array(
+            'rules' => array('required', 'max_length' => 1023),//this length has been chosen at random think about lencht more later.
+            'label' => 'Description'
+        ),
+        'link' => array(
+            'rules' => array('required', 'max_length' => 1023),//this length has been chosen at random think about lencht more later.
+            'label' => 'Link'
+        )
+    );
 
-    public function get_name() {
-        return $this->name;
-    }
+    /**
+     * default order is to sort by name various other ordering can be achived by setting he detault ordering as such:
+     * var $default_order_by = array('name', 'id' => 'desc');
+     */
 
-    public function get_description() {
-        return $this->description;
-    }
-
-    public function get_link() {
-        return $this->link;
-    }
-
-    public function set_name($value) {
-        $this->name = $value;
-    }
-
-    public function set_description($value) {
-        $this->description = $value;
-    }
-
-    public function set_link($value) {
-        $this->link = $value;
+    function __construct($id = NULL)
+    {
+       //$this->name = $name;
+       //$this->description = $description;
+       //$this->link = $link;
+       parent::__construct($id);
     }
 }
