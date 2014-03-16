@@ -47,11 +47,10 @@
 
 $active_group = 'default';
 $active_record = TRUE;
-$db['default']['dbprefix'] = ""; //clea the db prefix for datamapper to laod.
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
-$db['default']['password'] = 'db';
+$db['default']['password'] = '';
 $db['default']['database'] = 'test';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
