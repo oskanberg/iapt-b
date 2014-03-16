@@ -4,7 +4,50 @@ class Json extends CI_Controller {
 
     // domain.com/json/
     public function index() {
-        // return index of recipes?
+        $cats =  new Category();
+        $cats->get(); //get all
+
+        $categories = array();
+
+        foreach($cats as $cat) {
+
+            $category_recipes = array();
+
+            $cat->recipe->get();
+            foreach($cat->recipe as $rep ) {
+                $recipe = array(
+                    "id" => $rep->id,
+                    "title" => $rep->title,
+                    "type" => $rep->type,
+                    "serves" => $rep->serves,
+                    "narrative" => $rep->narrative_recipe,
+                    "segmented" => $rep->segmented_recipe,
+                    "step_by_step" => $rep->step_by_step_recipe
+                );
+                array_push($category_recipes,$recipe);
+            }
+
+            $category = array(
+                "id" => $cat->id,
+                "name" => $cat->name,
+                "description" => $cat->description,
+                "category_recipes" => $category_recipes
+            );
+
+            array_push($categories, $category);
+        }
+
+        $json = json_encode(array(
+                "categories" => $categories,
+                "debug" => array(
+                    "version" => "0.0.1",
+                    "timestamp" => time()
+                )
+            )
+        );
+
+        header('Content-Type: application/json');
+        echo $json;
     }
 
     // domain.com/json/recipe/<id>
