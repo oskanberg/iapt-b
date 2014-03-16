@@ -10,7 +10,7 @@ class Recipe extends DataMapper {
     //private $step_by_step_recipe;
 
     //arrays for storing relationships
-    var $has_one = array();
+    var $has_one = array('category');
     var $has_many = array('step');
 
     function __construct($id = NULL) {
