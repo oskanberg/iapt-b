@@ -19,7 +19,56 @@ class Welcome extends CI_Controller {
      */
     public function index()
     {
-        $this->load->view('welcome_message');
+        $i = new Ingredient();
+        $i->name = 'test';
+        $i->link = 'www.test.com';
+        $i->description = "tjis is a nda dthasd as adfhajs igsd ijsgdoj sgoius g";
+
+        if($i->save()) {
+            echo "i save success! <br/>";
+        } else {
+            echo "i save fail <br/>";
+        }
+
+        $r = new Recipe();
+        $r->title = 'fucking CI';
+        $r->type = 'main';
+        $r->serves = 21;
+
+        if($r->save()) {
+            echo "r save success! <br/>";
+        } else {
+            echo "r save fail <br/>";
+        }
+
+        $s = new Step();
+        $s->operation = 'OP';
+
+        if($s->save()) {
+            echo "s save success! <br/>";
+        } else {
+            echo "s save fail <br/>";
+        }
+
+        $foo = new Recipe();
+        $foo->where('id',1)->get();//get the first recepe
+        $foo->step->get();
+
+        foreach ($foo->step as $step) {
+            echo 'STEP ID ' . $step->id . '<br/>';
+            echo 'STEP OP ' . $step->operation . '<br/>';
+
+            $step->ingredient->get();
+            foreach ($step->ingredient as $in) {
+                echo 'INGREDIENT ID ' . $in->id . '<br/>';
+                echo 'NAME ' . $in->name . '<br/>';
+                echo 'DESC ' . $in->description . '<br/>';
+                echo 'LINK ' . $in->link . '<br/>';
+            }
+
+            echo '<br/>';
+        }
+        //$this->load->view('welcome_message');
     }
 }
 
