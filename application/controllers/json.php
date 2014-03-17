@@ -2,7 +2,10 @@
 
 class Json extends CI_Controller {
 
-    // domain.com/json/
+    //index.php/json/index
+    /**
+     * echos a JSON ob with all the catagories and recipe metadata.
+     */
     public function index() {
         $cats =  new Category();
         $cats->get(); //get all
@@ -19,10 +22,7 @@ class Json extends CI_Controller {
                     "id" => $rep->id,
                     "title" => $rep->title,
                     "type" => $rep->type,
-                    "serves" => $rep->serves,
-                    "narrative" => $rep->narrative_recipe,
-                    "segmented" => $rep->segmented_recipe,
-                    "step_by_step" => $rep->step_by_step_recipe
+                    "serves" => $rep->serves
                 );
                 array_push($category_recipes,$recipe);
             }
@@ -50,7 +50,11 @@ class Json extends CI_Controller {
         echo $json;
     }
 
-    // domain.com/json/recipe/<id>
+    /**
+     * @param $id the id of the recipe to return
+     *
+     * echo's a JSON ob for the receipe.
+     */
     public function recipe($id) {
 
         $rep =  new Recipe();
