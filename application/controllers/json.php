@@ -37,17 +37,17 @@ class Json extends CI_Controller {
             array_push($categories, $category);
         }
 
-        $json = json_encode(array(
+        $json = array(
                 "categories" => $categories,
                 "debug" => array(
                     "version" => "0.0.1",
                     "timestamp" => time()
                 )
-            )
         );
 
-        header('Content-Type: application/json');
-        echo $json;
+        $data['json'] = $json;
+        //load the view with and render the json data.
+        $this->load->view('json_view', $data);
     }
 
     /**
@@ -100,16 +100,16 @@ class Json extends CI_Controller {
             "steps" => $steps
         );
 
-        $json = json_encode(array(
+        $json = array(
             "recipe" => $recipe,
             "debug" => array(
                 "version" => "0.0.1",
                 "timestamp" => time()
                 )
-            )
         );
 
-        header('Content-Type: application/json');
-        echo $json;
+        $data['json'] = $json;
+        //load the view with and render the json data.
+        $this->load->view('json_view', $data);
     }
 }
