@@ -106,10 +106,12 @@ class Json extends CI_Controller {
 			
 			array_push($orderings,$ordering_data);
 		}
+		$rep->category->get(); //get the catagory for the receipe
+
         $recipe = array(
             "id" => $rep->id,
             "title" => $rep->title,
-            "type" => $rep->type,
+            "category" => $rep->category->name,
             "serves" => $rep->serves,
             "image" => $rep->image_url,
             "orderings" => $orderings
