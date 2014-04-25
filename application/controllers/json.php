@@ -89,6 +89,7 @@ class Json extends CI_Controller {
 	
 	            $step_data = array (
 	                "id" => $step->id,
+	                "step_order" => $step->step_order,
 	                "operation" => $step->operation,
 	                "ingredients" => $ingredients //ingredients array
 	            );
