@@ -1,4 +1,4 @@
-#<?php
+<?php
 
 class Json extends CI_Controller {
 
@@ -127,6 +127,7 @@ class Json extends CI_Controller {
         );
 
         $data['json'] = $json;
+		
         //load the view with and render the json data.
         $this->load->view('json_view', $data);
     }

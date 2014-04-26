@@ -1,4 +1,4 @@
-#<?php
+<?php
 
 class Ordering_type extends DataMapper {
 

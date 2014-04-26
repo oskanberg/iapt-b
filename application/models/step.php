@@ -1,4 +1,4 @@
-#<?php
+<?php
 
 class Step extends DataMapper {
 

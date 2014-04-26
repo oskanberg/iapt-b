@@ -1,4 +1,4 @@
-#<?php
+<?php
 
 class Recipe extends DataMapper {
 
