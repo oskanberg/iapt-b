@@ -7,8 +7,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
         <!-- page specific -->
-        <link rel="stylesheet" type="text/css" href="categories.css">
-        <script src="category_script.js"></script>
+        <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/categories.css') ?>">
+        <script src="<?php echo site_url('assets/js/category_script.js') ?>"></script>
         <title>Cheffy</title>
     </head>
 
