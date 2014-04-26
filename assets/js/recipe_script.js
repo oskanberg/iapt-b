@@ -18,7 +18,7 @@ function request_and_build() {
     $.ajax({
         type: 'GET',
         dataType: 'json',
-        url: '/index.php/json/recipe/' + recipe_id,
+        url: '/assessments/IAPT/002/01/index.php/json/recipe/' + recipe_id,
     })
     .done(function (json_obj) {
         json_object = json_obj;
