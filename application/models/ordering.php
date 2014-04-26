@@ -1,10 +1,10 @@
 #<?php
 
-class Recipe extends DataMapper {
+class Ordering extends DataMapper {
 
     //arrays for storing relationships
-    var $has_one = array('category');
-    var $has_many = array('ordering');
+    var $has_one = array('recipe','ordering_type');
+    var $has_many = array('step');
 
     function __construct($id = NULL) {
         parent::__construct($id);
