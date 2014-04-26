@@ -16,7 +16,7 @@ function request_and_build() {
     $.ajax({
         type: 'GET',
         dataType: 'json',
-        url: '/json/index',
+        url: '/index.php/json/index',
     })
     .done(create_carousels)
     .fail(function(jqXHR, status, error_thrown) {
