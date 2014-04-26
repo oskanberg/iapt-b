@@ -40,7 +40,7 @@
 
 $route['default_controller'] = "categories";
 $route['404_override'] = '';
-$route['recipe/(:num)'] = "recipes/view/$1";
+$route['recipe/(:any)'] = "recipes/view/$1";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
