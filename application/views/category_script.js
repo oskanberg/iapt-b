@@ -63,7 +63,7 @@ function create_carousels(json_object) {
         var recipes = category.category_recipes;
         var $row = $('div#' + row_id);
         for (var j = 0, recipe; recipe = recipes[j++];) {
-            if (section_recipes_remaining == 0) {
+            if (section_recipes_remaining === 0) {
                 rows++;
                 row_id = category.id + '-row-' + rows;
                 $('div#' + inner_id).append(

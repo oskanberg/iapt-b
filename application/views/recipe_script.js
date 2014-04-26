@@ -20,7 +20,7 @@ function request_and_build() {
         url: 'example_json_recipe.html',
     })
     .done(function (json_obj) {
-        json_object = json_obj
+        json_object = json_obj;
         populate_recipe_data(default_view);
     })
     .fail(function(jqXHR, status, error_thrown) {
@@ -71,12 +71,12 @@ function add_step(step) {
     var $step_row = $('div#' + step.id + '-row');
     $step_row.append(
         $.el('h1',{},'Step ' + step.id)
-    )
+    );
 
     // add step
     $step_row.append(
         $.el('p',{},step.operation)
-    )
+    );
 }
 
 function build_ingredients_array(ordering) {
@@ -102,6 +102,6 @@ $(document).ready(function () {
             $(this).removeClass('active');
         });
         $(this).parent().addClass('active');
-    })
+    });
     request_and_build();
 });
