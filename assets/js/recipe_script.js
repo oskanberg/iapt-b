@@ -14,10 +14,11 @@ var json_object;
 var default_view = 'Narrative';
 
 function request_and_build() {
+    var recipe_id = window.location.hash;
     $.ajax({
         type: 'GET',
         dataType: 'json',
-        url: 'example_json_recipe.html',
+        url: '/json/recipe/' + recipe_id,
     })
     .done(function (json_obj) {
         json_object = json_obj;
