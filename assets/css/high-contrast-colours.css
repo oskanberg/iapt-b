@@ -51,8 +51,8 @@ div.light-bg {
 }
 
 ul.nav-pills li a {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
 }
 
 ul.nav-pills li.title a {
@@ -67,20 +67,20 @@ ul.nav-pills li.title a:hover {
 }
 
 ul.nav-pills li.active a {
-    color: black;
-    background-color: white;
-    border: solid 1px black;
+    color: white;
+    background-color: black;
+    border: solid 1px white;
 }
 
 ul.nav-pills li.active a:hover {
-    color: black;
-    background-color: white;
+    color: white;
+    background-color: black;
 }
 
 ul.nav-pills li a:hover {
-    color: black;
-    background-color: white;
-    border: solid 1px black;
+    color: white;
+    background-color: black;
+    border: solid 1px white;
 }
 
 ol.breadcrumb {

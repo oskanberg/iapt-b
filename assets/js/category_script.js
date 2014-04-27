@@ -76,7 +76,7 @@ function create_carousels(json_object) {
             }
             $row.append(
                 $.el('div', {'class':'col-xs-3'}).append(
-                    $.el('a', {'href':'#','class':'thumbnail'}).append(
+                    $.el('a', {'href':'index.php/recipe/view#' + recipe.id,'class':'thumbnail'}).append(
                         $.el('img', {'src':'http://placehold.it/300x200'})
                     ),
                     $.el('div', {'class':'carousel-caption'}).append(
