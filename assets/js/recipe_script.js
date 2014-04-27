@@ -13,6 +13,14 @@ $.extend({
 var json_object;
 var default_view = 'Narrative';
 
+function click_format_button(format) {
+    $('a.fmt').each(function () {
+        if ($(this).text() == format) {
+            $(this).click();
+        }
+    });
+}
+
 function request_and_build() {
     var recipe_id = window.location.hash;
     recipe_id = recipe_id.replace('#', '');
@@ -25,11 +33,7 @@ function request_and_build() {
     .done(function (json_obj) {
         json_object = json_obj;
         // simulate a click on the relevant button
-        $('a.fmt').each(function () {
-            if ($(this).text() == localStorage['format_preference']) {
-                $(this).click();
-            }
-        });
+        click_format_button(localStorage['format_preference']);
     })
     .fail(function(jqXHR, status, error_thrown) {
         alert(status);

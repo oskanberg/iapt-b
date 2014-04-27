@@ -80,7 +80,7 @@ function create_carousels(json_object) {
                         $.el('img', {'src':'http://placehold.it/300x200'})
                     ),
                     $.el('div', {'class':'carousel-caption'}).append(
-                        $.el('a',{'href':'#'}, recipe.title)
+                        $.el('a',{'href':'index.php/recipe/view#' + recipe.id}, recipe.title)
                     )
                 )
             );

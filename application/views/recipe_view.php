@@ -34,7 +34,7 @@
                 <h1>Cheffy</h1>
                 <p>A food website</p>
                 <ol class="breadcrumb">
-                    <li><a href="/">Home</a></li>
+                    <li><a href="<?php echo site_url('/') ?>">Home</a></li>
                     <li class="active"></li>
                 </ol>
             </div>
@@ -93,17 +93,17 @@
                         <div class="col-md-4">
                             <h2>Step By Step</h2>
                             <p>In this format the recipe is split into small steps. The steps include all pre-preparation steps.</p>
-                            <p><a class="btn btn-default" href="#" role="button">Select Format &raquo;</a></p>
+                            <p><a class="btn btn-default" onClick="click_format_button('Step By Step');" href="#" role="button">Select Format &raquo;</a></p>
                         </div>
                         <div class="col-md-4">
                             <h2>Segmented</h2>
                             <p>In this format the recipe is segmented into easy-to-follow steps, but avoids including pre-preparation steps.</p>
-                            <p><a class="btn btn-default" href="#" role="button">Select Format &raquo;</a></p>
+                            <p><a class="btn btn-default" onClick="click_format_button('Segmented');" href="#" role="button">Select Format &raquo;</a></p>
                         </div>
                         <div class="col-md-4">
                             <h2>Narrative</h2>
                             <p>This is the style conventionally found in books. The recipe is presented in one go as a narrative.</p>
-                            <p><a class="btn btn-default" href="#" role="button">Select Format &raquo;</a></p>
+                            <p><a class="btn btn-default" onClick="click_format_button('Narrative');" href="#" role="button">Select Format &raquo;</a></p>
                         </div>
                     </div>
                 </div>
