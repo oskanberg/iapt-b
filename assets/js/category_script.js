@@ -48,14 +48,19 @@ function create_carousels(json_object) {
         var row_id = category.id + '-row-' + rows;
         var inner_id = category.id + '-inner';
 
+
+        //$carousels.append(
+        //    $.el('div', {'id':carousel_id, 'class':'carousel slide'}).append(
+        //        $.el('div', {'id': inner_id, 'class':'carousel-inner'}).append(
+        //            $.el('div', {'class':'item active'}).append(
+        //                $.el('div', {'id':row_id,'class':'row inner-shadow'})
+        //            )
+        //        )
+        //    )
+        //);
+
         $carousels.append(
-            $.el('div', {'id':carousel_id, 'class':'carousel slide'}).append(
-                $.el('div', {'id': inner_id, 'class':'carousel-inner'}).append(
-                    $.el('div', {'class':'item active'}).append(
-                        $.el('div', {'id':row_id,'class':'row inner-shadow'})
-                    )
-                )
-            )
+            $.el('div', {'id':row_id,'class':'row inner-shadow'})
         );
 
         // add recipes to this carousel
@@ -64,15 +69,19 @@ function create_carousels(json_object) {
         var $row = $('div#' + row_id);
         for (var j = 0, recipe; recipe = recipes[j++];) {
             if (section_recipes_remaining === 0) {
-                rows++;
-                row_id = category.id + '-row-' + rows;
-                $('div#' + inner_id).append(
-                    $.el('div', {'class':'item'}).append(
-                        $.el('div', {'id':row_id,'class':'row inner-shadow'})
-                    )
-                );
-                $row = $('div#' + row_id);
-                section_recipes_remaining = RECIPES_PER_SECTION;
+                //rows++;
+                //row_id = category.id + '-row-' + rows;
+                //$('div#' + inner_id).append(
+                //    $.el('div', {'class':'item'}).append(
+                //        $.el('div', {'id':row_id,'class':'row inner-shadow'})
+                //    )
+                //);
+                //$row = $('div#' + row_id);
+                //section_recipes_remaining = RECIPES_PER_SECTION;
+
+                // don't build hidden elements (for accessibility)
+                // just forget about the rest (let the user click more...)
+                break;
             }
             $row.append(
                 $.el('div', {'class':'col-xs-3'}).append(
@@ -87,22 +96,28 @@ function create_carousels(json_object) {
             section_recipes_remaining--;
         }
 
-        // add controls
+        // add 'more' button
         var $carousel = $('div#' + carousel_id);
         $carousel.append(
-            $.el('a', {
-                'class':'left carousel-control',
-                'href':'#'+carousel_id,
-                'data-slide':'prev'
-            }, '<')
+            $.el('a', {'href':'index.php/category/view#' + category.id, 'class':'more-button'})
         );
-        $carousel.append(
-            $.el('a', {
-                'class':'right carousel-control',
-                'href':'#'+carousel_id,
-                'data-slide':'next'
-            }, '>')
-        );
+
+        // add controls
+        //var $carousel = $('div#' + carousel_id);
+        //$carousel.append(
+        //    $.el('a', {
+        //        'class':'left carousel-control',
+        //        'href':'#'+carousel_id,
+        //        'data-slide':'prev'
+        //    }, '<')
+        //);
+        //$carousel.append(
+        //    $.el('a', {
+        //        'class':'right carousel-control',
+        //        'href':'#'+carousel_id,
+        //        'data-slide':'next'
+        //    }, '>')
+        //);
     }
 }
 
