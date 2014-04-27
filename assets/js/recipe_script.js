@@ -15,6 +15,7 @@ var default_view = 'Narrative';
 
 function request_and_build() {
     var recipe_id = window.location.hash;
+    recipe_id = recipe_id.replace('#', '');
     $.ajax({
         type: 'GET',
         dataType: 'json',
