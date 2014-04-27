@@ -43,12 +43,12 @@ $(document).ready(function () {
 
 function load_style_preferences() {
     // reset
-    $('link[rel="stylesheet"]').removeAttr('disabled');
+    $('link[rel="stylesheet"]').prop('disabled', false);
     for (var key in localStorage) {
         if (key.startsWith('style') && localStorage[key] === 'false') {
             // disable that style
             console.log('disabling ' + key);
-            $('#' + key).attr('disabled', 'disabled');
+            $('#' + key).prop('disabled', true);
         }
     }
     if (localStorage['style-high-contrast-colours'] === 'true') {
