@@ -8,32 +8,39 @@ class Json extends CI_Controller {
      */
     public function index() {
         $cats =  new Category();
-        $cats->get(); //get all
+        $cats->get(); //get all categogies
 
         $categories = array();
 
+		// iterate over each category and load all the data associted with it.
         foreach($cats as $cat) {
 
             $category_recipes = array();
 
-            $cat->recipe->get();
+            $cat->recipe->get();//get the receipes for this category
+            
+            //iterate over the recipes and load the all the data assoicated with them.
             foreach($cat->recipe as $rep ) {
+                //load the data into a n array for the receipe	
                 $recipe = array(
                     "id" => $rep->id,
                     "title" => $rep->title,
                     "type" => $rep->type,
                     "serves" => $rep->serves
                 );
+				//push the current receipes data on the array of catogray recipes.
                 array_push($category_recipes,$recipe);
             }
 
+			//store the data from the current category
             $category = array(
                 "id" => $cat->id,
                 "name" => $cat->name,
                 "description" => $cat->description,
-                "category_recipes" => $category_recipes
+                "category_recipes" => $category_recipes//this the array of the recipes for the current category
             );
 
+			//store the current categoriy.
             array_push($categories, $category);
         }
 
@@ -44,8 +51,9 @@ class Json extends CI_Controller {
                     "timestamp" => time()
                 )
         );
-
+		//wrap the data for the view
         $data['json'] = $json;
+		
         //load the view with and render the json data.
         $this->load->view('json_view', $data);
     }
@@ -126,6 +134,7 @@ class Json extends CI_Controller {
                 )
         );
 
+		//wrap the data for the view.
         $data['json'] = $json;
 		
         //load the view with and render the json data.

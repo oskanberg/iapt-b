@@ -1,6 +1,6 @@
 <?php
 
-class Ingredient extends DataMapper {
+class Ingredient extends DataMapper { //is not a CI model but a datamapper model
 
     //arrays for storing relationships
     var $has_one = array();
@@ -25,13 +25,10 @@ class Ingredient extends DataMapper {
     /**
      * default order is to sort by name various other ordering can be achived by setting he detault ordering as such:
      * var $default_order_by = array('name', 'id' => 'desc');
+	 * @param the id of the ingredient.
      */
-
     function __construct($id = NULL)
     {
-       //$this->name = $name;
-       //$this->description = $description;
-       //$this->link = $link;
        parent::__construct($id);
     }
 }
