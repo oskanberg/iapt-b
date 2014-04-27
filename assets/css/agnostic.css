@@ -76,3 +76,8 @@ ol.breadcrumb>li+li:before {
 ol.breadcrumb li.active {
     color: white;
 }
+
+div#carousels a.btn {
+    margin-top: 20px;
+    margin-right: 20px;
+}

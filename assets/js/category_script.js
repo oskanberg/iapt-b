@@ -97,9 +97,13 @@ function create_carousels(json_object) {
         }
 
         // add 'more' button
+        // <a class="btn btn-default navbar-right" href="#" role="button">See more Main Meals »</a>
         var $carousel = $('div#' + carousel_id);
         $carousel.append(
-            $.el('a', {'href':'index.php/category/view#' + category.id, 'class':'more-button'})
+            $.el('a', {
+                'href':'index.php/category/view#' + category.id,
+                'class':'btn btn-default navbar-right'
+            }, 'See more ' + category.name + '&raquo;')
         );
 
         // add controls

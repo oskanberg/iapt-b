@@ -93,3 +93,7 @@ div.modal-content .col-md-4 {
     border: 1px solid black;
     background-color: rgba(0,0,0,0.1);
 }
+
+a.more-button {
+    color: #ee6600;
+}
