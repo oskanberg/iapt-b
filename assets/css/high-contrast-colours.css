@@ -1,0 +1,101 @@
+
+
+body {
+    background-color: white;
+}
+
+div.cat-title h2 {
+    color: black;
+}
+
+div#method p, h1, h2, li {
+    color: white;
+}
+
+li.list-group-item {
+    background-color: black;
+}
+
+div.carousel {
+    background-color: white;
+}
+
+div.carousel a {
+    color: black;
+    background-color: white;
+}
+
+div.jumbotron {
+    background-color: black;
+}
+
+div.jumbotron h1 {
+    color: white;
+}
+
+div.jumbotron p {
+    color: white;
+}
+
+div.accessibility-controls {
+    background-color: black;
+    color: white;
+}
+
+div.accessibility-controls a {
+    color: white;
+}
+
+div.light-bg {
+    background-color: black;
+}
+
+ul.nav-pills li a {
+    background-color: black;
+    color: white;
+}
+
+ul.nav-pills li.title a {
+    color: black;
+    background-color: transparent;
+}
+
+ul.nav-pills li.title a:hover {
+    color: black;
+    background-color: transparent;
+    background-image: none;
+}
+
+ul.nav-pills li.active a {
+    color: black;
+    background-color: white;
+    border: solid 1px black;
+}
+
+ul.nav-pills li.active a:hover {
+    color: black;
+    background-color: white;
+}
+
+ul.nav-pills li a:hover {
+    color: black;
+    background-color: white;
+    border: solid 1px black;
+}
+
+ol.breadcrumb {
+    background-color: black;
+}
+
+ol.breadcrumb li a {
+    color: white;
+}
+
+div.modal-content {
+    background-color: black;
+    border: 10px solid white;
+}
+
+div.modal-content p, h1, h2, h3, h4 {
+    color: white;
+}

@@ -4,7 +4,6 @@ $.extend({
         var $el = $(document.createElement(el));
         $el.attr(props);
         if (typeof innerHTML !== 'undefined') {
-            console.log(innerHTML);
             $el.text(innerHTML);
         }
         return $el;
@@ -17,6 +16,7 @@ function request_and_build() {
         type: 'GET',
         dataType: 'json',
         url: '/assessments/IAPT/002/01/index.php/json/index',
+        //url: 'example_category_json.html'
     })
     .done(create_carousels)
     .fail(function(jqXHR, status, error_thrown) {

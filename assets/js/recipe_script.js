@@ -19,10 +19,16 @@ function request_and_build() {
         type: 'GET',
         dataType: 'json',
         url: '/assessments/IAPT/002/01/index.php/json/recipe/' + recipe_id,
+        //url: 'example_json.html'
     })
     .done(function (json_obj) {
         json_object = json_obj;
-        populate_recipe_data(default_view);
+        // simulate a click on the relevant button
+        $('a.fmt').each(function () {
+            if ($(this).text() == localStorage['format_preference']) {
+                $(this).click();
+            }
+        });
     })
     .fail(function(jqXHR, status, error_thrown) {
         alert(status);
@@ -31,11 +37,19 @@ function request_and_build() {
     });
 }
 
+function get_ordering_by_name(ordering_name, orderings_object) {
+    for (var i = 0, ordering; ordering = orderings_object[i++];) {
+        if (ordering.type == ordering_name) return ordering;
+    }
+    alert('whoopsie-shit');
+    // TODO: friendlier warnings
+}
+
 function populate_recipe_data(format) {
     var recipe = json_object.recipe;
     // set title
     $('h1#recipe-name').text(recipe.title);
-    var ordering = recipe.orderings[format];
+    var ordering = get_ordering_by_name(format, recipe.orderings);
     // add ingredients
     var ingredients = build_ingredients_array(ordering);
     for (var i = 0, ingredient; ingredient = ingredients[i++];) {
@@ -46,13 +60,16 @@ function populate_recipe_data(format) {
 
     // add steps
     var steps = ordering.steps;
+    var is_narrative = format == 'Narrative' ? true : false;
     for (var i = 0, step; step = steps[i++];) {
-        add_step(step);
+        add_step(step, is_narrative);
     }
 
+    // change breadcrumb
+    $('ol.breadcrumb li.active').text(recipe.title);
 }
 
-function add_step(step) {
+function add_step(step, is_narrative) {
     var $method_section = $('div#method');
     // add a divider
     $method_section.append(
@@ -69,9 +86,10 @@ function add_step(step) {
     );
 
     // add title
+    var title = is_narrative ? 'Method' : 'Step ' + step.step_order;
     var $step_row = $('div#' + step.id + '-row');
     $step_row.append(
-        $.el('h1',{},'Step ' + step.id)
+        $.el('h1',{},title)
     );
 
     // add step
@@ -82,16 +100,29 @@ function add_step(step) {
 
 function build_ingredients_array(ordering) {
     var ingredients = [];
+    var included_ids = [];
     for (var j = 0, step; step = ordering.steps[j++];) {
-        ingredients = ingredients.concat(step.ingredients);
+        for (var k = 0, ingredient; ingredient = step.ingredients[k++];) {
+            // Some ingredients are used in multiple steps
+            // make sure we don't double count
+            if (included_ids.indexOf(ingredient.id) === -1) {
+                included_ids.push(ingredient.id);
+                ingredients.push(ingredient);
+            }
+        }
     }
     return ingredients;
 }
 
 $(document).ready(function () {
+    if (localStorage['format_preference'] === undefined) {
+        localStorage['format_preference'] = default_view;
+    }
     $('a.fmt').on('click', function (event) {
         event.preventDefault();
         var format = $(this).text();
+        // update persistent storage
+        localStorage['format_preference'] = format;
         // remove current ingredients
         $('ul#ingredients-list').empty();
         // remove current method

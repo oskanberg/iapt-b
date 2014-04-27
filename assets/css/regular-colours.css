@@ -1,0 +1,95 @@
+
+
+body {
+    background-color: rgba(200, 100, 100, 0.3);
+}
+
+div.cat-title h2 {
+    color: orange;
+}
+
+li.list-group-item {
+    background-color: transparent;
+}
+
+div.carousel {
+    background-color: rgb(180, 180, 180);
+}
+
+div.carousel a {
+    color: rgb(70, 70, 70);
+}
+
+div.jumbotron {
+    background-color: #ee6600;
+}
+
+div.jumbotron h1 {
+    color: white;
+}
+
+div.accessibility-controls {
+    background-color: #994c00;
+    color: white;
+}
+
+div.accessibility-controls a {
+    color: white;
+}
+
+div.light-bg {
+    background-color: rgb(250, 250, 250);
+    background-image:url('http://www.bakingmad.com/wp-content/themes/bakingmad/img/pattern_white.jpg');
+    background-repeat:repeat;
+}
+
+ul.nav-pills li a {
+    background-color: #ee6600;
+    color: white;
+}
+
+ul.nav-pills li.title a {
+    color: black;
+    background-color: transparent;
+}
+
+ul.nav-pills li.title a:hover {
+    color: black;
+    background-color: transparent;
+    background-image: none;
+}
+
+ul.nav-pills li.active a {
+    color: #ee6600;
+    background-color: white;
+    background-image:url('http://www.bakingmad.com/wp-content/themes/bakingmad/img/pattern_white.jpg');
+}
+
+ul.nav-pills li.active a:hover {
+    color: #ee6600;
+    background-color: white;
+    background-image:url('http://www.bakingmad.com/wp-content/themes/bakingmad/img/pattern_white.jpg');
+}
+
+ul.nav-pills li a:hover {
+    color: #ee6600;
+    background-color: white;
+    background-image:url('http://www.bakingmad.com/wp-content/themes/bakingmad/img/pattern_white.jpg');
+}
+
+ol.breadcrumb {
+    background-color: rgba(255,255,255, 0.2);
+}
+
+ol.breadcrumb li a {
+    color: white;
+}
+
+div.modal-content {
+    border: 10px solid black;
+}
+
+div.modal-content .col-md-4 {
+    border: 1px solid black;
+    background-color: rgba(0,0,0,0.1);
+}
