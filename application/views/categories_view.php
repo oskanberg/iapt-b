@@ -18,7 +18,7 @@
         <link rel="stylesheet" id="style-high-contrast-colours" type="text/css" href="<?php echo site_url('assets/css/high-contrast-colours.css') ?>">
         <link rel="stylesheet" id="style-larger-fonts" type="text/css" href="<?php echo site_url('assets/css/larger-fonts.css') ?>">
         <script src="<?php echo site_url('assets/js/common.js') ?>"></script>
-        <script src="<?php echo site_url('assets/js/category_script.js') ?>"></script>
+        <script src="<?php echo site_url('assets/js/categories_script.js') ?>"></script>
         <title>Cheffy</title>
     </head>
     <body>
