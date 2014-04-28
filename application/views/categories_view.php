@@ -38,7 +38,9 @@
         </div>
         <div id="carousels">
         </div>
-        <div id="container light-bg">
+        <hr class="featurette-divider">
+        <div class="container">
+            <hr class="featurette-divider">
             <footer>
                 <p>Copyright Cheffy 2014</p>
             </footer>

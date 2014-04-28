@@ -83,6 +83,8 @@ function populate_recipe_data(format) {
     $('ol.breadcrumb li#category').append(
         $.el('a', {'href':'../categories/category/view#' + recipe.category_id})
     );
+    $('ol.breadcrumb li#category').text(recipe.category);
+
 }
 
 function add_step(step, is_narrative) {
