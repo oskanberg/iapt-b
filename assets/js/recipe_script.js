@@ -12,6 +12,7 @@ $.extend({
 
 var json_object;
 var default_view = 'Narrative';
+var notify = true;
 
 function click_format_button(format) {
     $('a.fmt').each(function () {
@@ -33,6 +34,8 @@ function request_and_build() {
     .done(function (json_obj) {
         json_object = json_obj;
         // simulate a click on the relevant button
+        // but don't notify
+        notify = false;
         click_format_button(localStorage['format_preference']);
     })
     .fail(function(jqXHR, status, error_thrown) {
@@ -137,7 +140,12 @@ $(document).ready(function () {
         });
         $(this).parent().addClass('active');
         // notify success
-        $(this).notify('Recipe format changed', 'success');
+        if (notify) {
+            $(this).notify('Recipe format changed', 'success', {'position' : 't'});
+        } else {
+            // notify next time unless something says not to
+            notify = true;
+        }
     });
     request_and_build();
 });
