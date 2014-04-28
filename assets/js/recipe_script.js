@@ -59,7 +59,11 @@ function populate_recipe_data(format) {
     var ingredients = build_ingredients_array(ordering);
     for (var i = 0, ingredient; ingredient = ingredients[i++];) {
             $('ul#ingredients-list').append(
-                $.el('li', {'class' : 'list-group-item'}, ingredient.name)
+                $.el('li', {'class' : 'list-group-item'}, ingredient.name).append(
+                    $.el('a', {'href':ingredient.link}).append(
+                        $.el('span', {'class':'glyphicon glyphicon-new-window'})
+                    )
+                )
             );
     }
 

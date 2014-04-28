@@ -97,3 +97,7 @@ div.modal-content .col-md-4 {
 a.more-button {
     color: #ee6600;
 }
+
+ul.ingredients-list li.list-group-item a {
+    color: #ee6600;
+}
