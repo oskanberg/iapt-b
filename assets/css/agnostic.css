@@ -19,10 +19,6 @@ a.thumbnail {
     overflow: hidden;
 }
 
-a.thumbnail img {
-    margin: -40% 0 0 -40%;
-}
-
 div.recipe-img-crop {
     width: 400px;
     height: 400px;

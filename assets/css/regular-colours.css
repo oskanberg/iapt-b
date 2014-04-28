@@ -20,6 +20,11 @@ div.carousel a {
     color: rgb(70, 70, 70);
 }
 
+div.carousel-caption a {
+    color: white;
+    background-color: orange;
+}
+
 div.jumbotron {
     background-color: #ee6600;
 }

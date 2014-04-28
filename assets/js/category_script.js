@@ -51,13 +51,9 @@ function populate_category(json_object) {
                 $.el('a', {
                     'href':'../../recipe/view#' + recipe.id,
                     'class':'thumbnail',
-                    'title' : 'click to view ' + recipe.title
-                }).append(
-                    $.el('img', {
-                        'src':recipe.image,
-                        'alt' : 'picture of ' + recipe.title
-                    })
-                ),
+                    'title' : 'click to view ' + recipe.title,
+                    'style' : 'background-image:url(' + recipe.image + ')'
+                }),
                 $.el('div', {'class':'carousel-caption'}).append(
                     $.el('a',{
                         'href':'../../recipe/view#' + recipe.id,

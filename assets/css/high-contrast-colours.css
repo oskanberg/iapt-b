@@ -25,6 +25,11 @@ div.carousel a {
     background-color: white;
 }
 
+div.carousel-caption a {
+    color: white;
+    background-color: black;
+}
+
 div.jumbotron {
     background-color: black;
 }
