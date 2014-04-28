@@ -35,7 +35,7 @@
                 <h1>Cheffy</h1>
                 <p>A food website</p>
                 <ol class="breadcrumb">
-                    <li><a href="<?php echo site_url('/') ?>">Home</a></li>
+                    <li><a title="click to go home" href="<?php echo site_url('/') ?>">Home</a></li>
                     <li class="active"></li>
                 </ol>
             </div>

@@ -87,11 +87,21 @@ function create_carousels(json_object) {
             }
             $row.append(
                 $.el('div', {'class':'col-xs-3'}).append(
-                    $.el('a', {'href':'index.php/recipe/view#' + recipe.id,'class':'thumbnail'}).append(
-                        $.el('img', {'src': recipe.image})
+                    $.el('a', {
+                        'href':'index.php/recipe/view#' + recipe.id,
+                        'class':'thumbnail'
+                        'title' : 'click to view ' + recipe.title
+                    }).append(
+                        $.el('img', {
+                            'src': recipe.image,
+                            'alt': 'picture of '+ recipe.title
+                        })
                     ),
                     $.el('div', {'class':'carousel-caption'}).append(
-                        $.el('a',{'href':'index.php/recipe/view#' + recipe.id}, recipe.title)
+                        $.el('a',{
+                            'href':'index.php/recipe/view#' + recipe.id,
+                            'title' : 'click to view ' + recipe.title
+                        }, recipe.title)
                     )
                 )
             );
@@ -103,7 +113,8 @@ function create_carousels(json_object) {
         $row.after(
             $.el('a', {
                 'href':'index.php/categories/category/view#' + category.id,
-                'class':'btn btn-default navbar-right'
+                'class':'btn btn-default navbar-right',
+                'title' : 'click to view ' + category.name
             }, 'See more ' + category.name + ' \u00bb')
         );
 

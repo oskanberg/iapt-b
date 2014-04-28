@@ -35,7 +35,7 @@
                 <h1>Cheffy</h1>
                 <p>A food website</p>
                 <ol class="breadcrumb">
-                    <li><a href="<?php echo site_url('/') ?>">Home</a></li>
+                    <li><a title="click to go home" href="<?php echo site_url('/') ?>">Home</a></li>
                     <li id="category"></li>
                     <li class="active"></li>
                 </ol>
@@ -69,7 +69,7 @@
                 </div>
                 <div class="col-md-5">
                     <div class="recipe-img-crop">
-                        <img class="featurette-image img-responsive" src="http://placehold.it/400x400" alt="Generic placeholder image">
+                        <img alt="image of the dish" class="featurette-image img-responsive" src="http://placehold.it/400x400" alt="Generic placeholder image">
                     </div>
                 </div>
             </div>
