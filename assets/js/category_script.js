@@ -39,7 +39,9 @@ function create_carousels(json_object) {
             $.el('div', {'id':category.id +'-title', 'class':'container cat-title'})
         );
         $('div#' + category.id + '-title').append(
-            '<h2>' + category.name + '</h2>'
+            $.el('h2', {}).append(
+                $.el('a', {'href':'index.php/recipe/view#' + recipe.id}, category.name)
+            )
         );
 
         // add one carousel with one active row
