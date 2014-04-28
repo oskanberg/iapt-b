@@ -183,6 +183,7 @@ $(document).ready(function () {
         $(this).parent().addClass('active');
         // notify success
         if (notify) {
+            $('*[data-notify-text]').click();
             $(this).notify('Recipe format changed', 'success', {'position' : 't'});
         } else {
             // notify next time unless something says not to
