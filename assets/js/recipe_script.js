@@ -126,6 +126,7 @@ function add_step(step, format) {
         var step_ingredients_id = 'step' + step.id + '-ingredients';
         $step_row.append(
             $.el('div', {'class':'col-md-5'}).append(
+                $.el('h2', {}, 'You will need'),
                 $.el('ul', {'id': step_ingredients_id, 'class':'list-group'})
             )
         );
