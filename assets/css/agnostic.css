@@ -26,11 +26,8 @@ a.thumbnail img {
 div.recipe-img-crop {
     width: 400px;
     height: 400px;
-    overflow: hidden;
-}
-
-div.recipe-img-crop img {
-    margin: -40% 0 0 -40%;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 div.jumbotron {

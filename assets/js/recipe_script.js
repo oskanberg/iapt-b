@@ -79,7 +79,7 @@ function populate_recipe_data(format) {
     }
 
     // add image
-    $('div.recipe-img-crop img').attr('src', recipe.image);
+    $('div.recipe-img-crop img').css('background-image', 'url(' + recipe.image + ')');
 
     // change breadcrumb
     $('ol.breadcrumb li.active').text(recipe.title);
