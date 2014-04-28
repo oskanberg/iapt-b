@@ -44,6 +44,11 @@ div.row {
     margin: 0;
 }
 
+div.carousel-caption a {
+    padding: 5px;
+    font-size: 1.5em;
+}
+
 div.accessibility-controls {
     text-align: center;
 }

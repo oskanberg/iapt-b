@@ -59,23 +59,23 @@ function populate_recipe_data(format) {
     // add ingredients
     var ingredients = build_ingredients_array(ordering);
     for (var i = 0, ingredient; ingredient = ingredients[i++];) {
-            $('ul#ingredients-list').append(
-                $.el('li', {'class' : 'list-group-item'}, ingredient.name  + ' ').append(
-                    $.el('a', {
-                        'href':ingredient.link,
-                        'title' : 'click to view information about ' + ingredient.name
-                    }).append(
-                        $.el('span', {'class':'glyphicon glyphicon-new-window'})
-                    )
+        $('ul#ingredients-list').append(
+            $.el('li', {'class' : 'list-group-item'}, ingredient.name  + ' ').append(
+                $.el('a', {
+                    'href':ingredient.link,
+                    'target' : '_blank',
+                    'title' : 'click to view information about ' + ingredient.name
+                }).append(
+                    $.el('span', {'class':'glyphicon glyphicon-new-window'})
                 )
-            );
+            )
+        );
     }
 
     // add steps
     var steps = ordering.steps;
-    var is_narrative = format == 'Narrative' ? true : false;
     for (var i = 0, step; step = steps[i++];) {
-        add_step(step, is_narrative);
+        add_step(step, format);
     }
 
     // add image
@@ -94,7 +94,7 @@ function populate_recipe_data(format) {
 
 }
 
-function add_step(step, is_narrative) {
+function add_step(step, format) {
     var $method_section = $('div#method');
     // add a divider
     $method_section.append(
@@ -111,16 +111,41 @@ function add_step(step, is_narrative) {
     );
 
     // add title
-    var title = is_narrative ? 'Method' : 'Step ' + step.step_order;
+    var title = format == 'Narrative' ? 'Method' : 'Step ' + step.step_order;
     var $step_row = $('div#' + step.id + '-row');
     $step_row.append(
         $.el('h1',{},title)
     );
 
-    // add step
+    // add step operation
     $step_row.append(
-        $.el('p',{},step.operation)
+        $.el('div', {'class':'col-md-7'}).append(
+            $.el('p',{},step.operation)
+        )
     );
+
+    // if it's step-by-step add step ingredients
+    if (format == 'Step By Step') {
+        var step_ingredients_id = 'step' + step.id + '-ingredients';
+        $step_row.append(
+            $.el('div', {'class':'col-md-5'}).append(
+                $.el('ul' {'id': step_ingredients_id, 'class':'list-group'})
+            )
+        );
+        for (var i = 0, ingredient; ingredient = step.ingredients[i++];) {
+            $('ul#' + step_ingredients_id).append(
+                $.el('li', {'class' : 'list-group-item'}, ingredient.name  + ' ').append(
+                    $.el('a', {
+                        'href':ingredient.link,
+                        'target' : '_blank',
+                        'title' : 'click to view information about ' + ingredient.name
+                    }).append(
+                        $.el('span', {'class':'glyphicon glyphicon-new-window'})
+                    )
+                )
+            );
+        }
+    }
 }
 
 function build_ingredients_array(ordering) {
