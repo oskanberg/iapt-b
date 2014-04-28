@@ -47,13 +47,13 @@
                     </a>
                 </li>
                 <li class="active">
-                    <a class="fmt" href="#">Narrative</a>
+                    <a class="fmt" href="#">Step By Step</a>
                 </li>
                 <li>
                     <a class="fmt" href="#">Segmented</a>
                 </li>
                 <li>
-                    <a class="fmt" href="#">Step By Step</a>
+                    <a class="fmt" href="#">Narrative</a>
                 </li>
             </ul>
         </div>
@@ -91,7 +91,7 @@
                     <h4 class="modal-title" id="myModalLabel">Recipe Formats Explained</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Select the recipe format that best suits your cooking style:</p>
+                    <p>Select the recipe format that best suits your cooking style. Your preferences will be saved:</p>
                     <div class="row">
                         <div class="col-md-4">
                             <h2>Step By Step</h2>
