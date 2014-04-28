@@ -121,6 +121,7 @@ class Json extends CI_Controller {
             "id" => $rep->id,
             "title" => $rep->title,
             "category" => $rep->category->name,
+            "category_id" => $rep->category->id,
             "serves" => $rep->serves,
             "image" => $rep->image_url,
             "orderings" => $orderings
