@@ -36,9 +36,7 @@ function request_and_build() {
         click_format_button(localStorage['format_preference']);
     })
     .fail(function(jqXHR, status, error_thrown) {
-        alert(status);
-        alert(error_thrown);
-        // TODO: implement good usability error thing
+        $.notify('The page has failed to load. Please try again or get in contact.', {globalPosition: 'top center'});
     });
 }
 
@@ -46,8 +44,7 @@ function get_ordering_by_name(ordering_name, orderings_object) {
     for (var i = 0, ordering; ordering = orderings_object[i++];) {
         if (ordering.type == ordering_name) return ordering;
     }
-    alert('whoopsie-shit');
-    // TODO: friendlier warnings
+    $.notify('Recipe not loaded correctly. Please try again or get in contact.', {globalPosition: 'top center'});
 }
 
 function populate_recipe_data(format) {
@@ -139,6 +136,8 @@ $(document).ready(function () {
             $(this).removeClass('active');
         });
         $(this).parent().addClass('active');
+        // notify success
+        $(this).notify('Recipe format changed', 'success');
     });
     request_and_build();
 });

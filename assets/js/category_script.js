@@ -20,9 +20,7 @@ function request_and_build() {
     })
     .done(populate_category)
     .fail(function(jqXHR, status, error_thrown) {
-        alert(status);
-        alert(error_thrown);
-        // TODO: implement good usability error thing
+        $.notify('The page has failed to load. Please try again or get in contact.', {globalPosition: 'top center'});
     });
 }
 
@@ -31,8 +29,7 @@ function get_category_by_id(category_id, categories_object) {
     for (var i = 0, category; category = categories_object[i++];) {
         if (category.id == category_id) return category;
     }
-    alert('whoopsie-shit');
-    // TODO: friendlier warnings
+    $.notify('Category could not be found. Please go back and try again.', {globalPosition: 'top center'});
 }
 
 function populate_category(json_object) {
