@@ -83,6 +83,7 @@ function populate_recipe_data(format) {
 
     // change breadcrumb
     $('ol.breadcrumb li.active').text(recipe.title);
+    $('ol.breadcrumb li#category').empty();
     $('ol.breadcrumb li#category').append(
         $.el('a', {
             'href':'../categories/category/view#' + recipe.category_id,
