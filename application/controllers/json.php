@@ -26,7 +26,9 @@ class Json extends CI_Controller {
                     "id" => $rep->id,
                     "title" => $rep->title,
                     "type" => $rep->type,
-                    "serves" => $rep->serves
+                    "serves" => $rep->serves,
+                    "image" => $rep->image_url
+                    
                 );
 				//push the current receipes data on the array of catogray recipes.
                 array_push($category_recipes,$recipe);
