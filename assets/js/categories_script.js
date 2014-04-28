@@ -89,7 +89,7 @@ function create_carousels(json_object) {
                 $.el('div', {'class':'col-xs-3'}).append(
                     $.el('a', {
                         'href':'index.php/recipe/view#' + recipe.id,
-                        'class':'thumbnail'
+                        'class':'thumbnail',
                         'title' : 'click to view ' + recipe.title
                     }).append(
                         $.el('img', {
