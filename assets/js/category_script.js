@@ -48,11 +48,11 @@ function populate_category(json_object) {
     for (var j = 0, recipe; recipe = category.category_recipes[j++];) {
         $row.append(
             $.el('div', {'class':'col-xs-3'}).append(
-                $.el('a', {'href':'index.php/recipe/view#' + recipe.id,'class':'thumbnail'}).append(
-                    $.el('img', {'src':'http://placehold.it/300x200'})
+                $.el('a', {'href':'../../recipe/view#' + recipe.id,'class':'thumbnail'}).append(
+                    $.el('img', {'src':recipe.image})
                 ),
                 $.el('div', {'class':'carousel-caption'}).append(
-                    $.el('a',{'href':'index.php/recipe/view#' + recipe.id}, recipe.title)
+                    $.el('a',{'href':'../../recipe/view#' + recipe.id}, recipe.title)
                 )
             )
         );

@@ -11,7 +11,7 @@ $.extend({
 });
 
 var json_object;
-var default_view = 'Narrative';
+var default_view = 'Step By Step';
 var notify = true;
 
 function click_format_button(format) {
@@ -60,7 +60,7 @@ function populate_recipe_data(format) {
     var ingredients = build_ingredients_array(ordering);
     for (var i = 0, ingredient; ingredient = ingredients[i++];) {
             $('ul#ingredients-list').append(
-                $.el('li', {'class' : 'list-group-item'}, ingredient.name).append(
+                $.el('li', {'class' : 'list-group-item'}, ingredient.name  + ' ').append(
                     $.el('a', {'href':ingredient.link}).append(
                         $.el('span', {'class':'glyphicon glyphicon-new-window'})
                     )
@@ -80,6 +80,9 @@ function populate_recipe_data(format) {
 
     // change breadcrumb
     $('ol.breadcrumb li.active').text(recipe.title);
+    $('ol.breadcrumb li#category').append(
+        $.el('a', {'href':'../categories/category/view#' + recipe.category_id})
+    );
 }
 
 function add_step(step, is_narrative) {
