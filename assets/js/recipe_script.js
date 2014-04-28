@@ -55,6 +55,7 @@ function populate_recipe_data(format) {
     // set title
     $('h1#recipe-name').text(recipe.title);
     var ordering = get_ordering_by_name(format, recipe.orderings);
+
     // add ingredients
     var ingredients = build_ingredients_array(ordering);
     for (var i = 0, ingredient; ingredient = ingredients[i++];) {
@@ -73,6 +74,9 @@ function populate_recipe_data(format) {
     for (var i = 0, step; step = steps[i++];) {
         add_step(step, is_narrative);
     }
+
+    // add image
+    $('div.recipe-img-crop img').attr('src', recipe.image);
 
     // change breadcrumb
     $('ol.breadcrumb li.active').text(recipe.title);
