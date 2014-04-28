@@ -36,8 +36,12 @@ div.jumbotron h1 {
 }
 
 div.inner-shadow {
-   box-shadow: inset 0 0 10px #555555;
-   padding: 1em;
+    box-shadow: inset 0 0 10px #555555;
+    padding: 1em;
+}
+
+div.row {
+    margin: 0;
 }
 
 div.accessibility-controls {
