@@ -36,7 +36,7 @@
                 <p>A food website</p>
                 <ol class="breadcrumb">
                     <li><a href="<?php echo site_url('/') ?>">Home</a></li>
-                    <li id="category"><a href="<?php echo site_url('/') ?>"></a></li>
+                    <li id="category"></li>
                     <li class="active"></li>
                 </ol>
             </div>
