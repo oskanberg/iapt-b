@@ -40,7 +40,7 @@ function create_carousels(json_object) {
         );
         $('div#' + category.id + '-title').append(
             $.el('h2', {}).append(
-                $.el('a', {'href':'index.php/category/view#' + category.id}, category.name)
+                $.el('a', {'href':'index.php/categories/category/view#' + category.id}, category.name)
             )
         );
 
@@ -102,9 +102,9 @@ function create_carousels(json_object) {
         // <a class="btn btn-default navbar-right" href="#" role="button">See more Main Meals »</a>
         $row.after(
             $.el('a', {
-                'href':'index.php/category/view#' + category.id,
+                'href':'index.php/categories/category/view#' + category.id,
                 'class':'btn btn-default navbar-right'
-            }, 'See more ' + category.name + '»')
+            }, 'See more ' + category.name + ' \u00bb')
         );
 
         // add controls
