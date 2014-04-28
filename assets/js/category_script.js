@@ -44,7 +44,7 @@ function populate_category(json_object) {
 
     // Add all of the recipes
     // Future development may like to limit this in some way
-    var $row = $('div.row');row_id
+    var $row = $('div.row');
     for (var j = 0, recipe; recipe = category.category_recipes[j++];) {
         $row.append(
             $.el('div', {'class':'col-xs-3'}).append(
