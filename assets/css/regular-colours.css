@@ -101,13 +101,3 @@ a.more-button {
 ul.ingredients-list li.list-group-item a {
     color: #ee6600;
 }
-
-div.recipe-img-crop {
-    width: 400px;
-    height: 400px;
-    overflow: hidden;
-}
-
-div.recipe-img-crop img {
-    margin: -40% 0 0 -40%;
-}
