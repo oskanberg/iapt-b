@@ -56,6 +56,7 @@ function populate_category(json_object) {
                 }),
                 $.el('div', {'class':'carousel-caption'}).append(
                     $.el('a',{
+                        'tabindex' : '-1',
                         'href':'../../recipe/view#' + recipe.id,
                         'title' : 'click to view ' + recipe.title
                     }, recipe.title)

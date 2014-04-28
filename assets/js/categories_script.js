@@ -95,6 +95,7 @@ function create_carousels(json_object) {
                     }),
                     $.el('div', {'class':'carousel-caption'}).append(
                         $.el('a',{
+                            'tabindex' : '-1',
                             'href':'index.php/recipe/view#' + recipe.id,
                             'title' : 'click to view ' + recipe.title
                         }, recipe.title)
