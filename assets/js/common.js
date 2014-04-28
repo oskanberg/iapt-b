@@ -26,7 +26,11 @@ $(document).ready(function () {
             localStorage[key] = default_preferences[key];
         }
     }
-
+    // add link to header
+    $('div.jumbotron .container h1').on('click', function() {
+        window.location = 'http://www-student.cs.york.ac.uk/assessments/IAPT/002/01/';
+    });
+    $('div.jumbotron .container h1').css('cursor', 'pointer');
     load_style_preferences();
     $('#high-contrast').on('click', function (event) {
         event.preventDefault();

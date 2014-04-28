@@ -110,16 +110,13 @@ function add_step(step, format) {
         )
     );
 
-    // add title
     var title = format == 'Narrative' ? 'Method' : 'Step ' + step.step_order;
     var $step_row = $('div#' + step.id + '-row');
-    $step_row.append(
-        $.el('h1',{},title)
-    );
 
     // add step operation
     $step_row.append(
         $.el('div', {'class':'col-md-7'}).append(
+            $.el('h1',{},title),
             $.el('p',{},step.operation)
         )
     );
