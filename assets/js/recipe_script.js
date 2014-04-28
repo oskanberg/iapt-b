@@ -122,7 +122,7 @@ function add_step(step, format) {
     );
 
     // if it's step-by-step add step ingredients
-    if (format == 'Step By Step') {
+    if (format == 'Step By Step' && step.ingredients.length > 0) {
         var step_ingredients_id = 'step' + step.id + '-ingredients';
         $step_row.append(
             $.el('div', {'class':'col-md-5'}).append(
