@@ -49,6 +49,10 @@ div.carousel-caption a {
     font-size: 1.5em;
 }
 
+div.carousel-caption {
+    padding: 0px;
+}
+
 div.accessibility-controls {
     text-align: center;
 }
