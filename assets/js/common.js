@@ -12,16 +12,15 @@ Storage.prototype.invertBoolValue = function (key) {
     } else {
         this.setItem(key, 'true');
     }
-}
+};
 
 var default_preferences = {
     'style-high-contrast-colours' : false,
     'style-regular-colours' : true,
-    'style-larger-fonts' : false
 };
 
 $(document).ready(function () {
-    if (localStorage['style-larger-fonts'] === undefined) {
+    if (localStorage['style-high-contrast-colours'] === undefined) {
         for (var key in default_preferences) {
             localStorage[key] = default_preferences[key];
         }
@@ -38,10 +37,11 @@ $(document).ready(function () {
         localStorage.invertBoolValue('style-regular-colours');
         load_style_preferences();
     });
-    $('#large-font').on('click', function (event) {
-        event.preventDefault();
-        localStorage.invertBoolValue('style-larger-fonts');
-        load_style_preferences();
+    $('#larger-font').on('click', function () {
+        make_text_larger(3);
+    });
+    $('#smaller-font').on('click', function () {
+        make_text_larger(3);
     });
 });
 
@@ -60,10 +60,24 @@ function load_style_preferences() {
     } else {
         $('#high-contrast').text('High Contrast');
     }
-    if (localStorage['style-larger-fonts'] === 'true') {
-        $('#large-font').text('Regular Font');
-    } else {
-        $('#large-font').text('Larger Font');
-    }
 
+}
+
+function make_text_larger(amount) {
+    $('p, a, li').each(function () {
+        var size = $(this).css('font-size');
+        size = parseInt(size.replace('px', ''));
+        size += amount;
+        console.log('setting as ' + size);
+        $(this).css('font-size', size + 'px');
+    });
+}
+
+function make_text_smaller(amount) {
+    $('p, a, li').each(function () {
+        var size = $(this).css('font-size');
+        size = parseInt(size.replace('px', ''));
+        size -= amount;
+        $(this).css('font-size', size + 'px');
+    });
 }
