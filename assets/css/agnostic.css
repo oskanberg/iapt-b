@@ -119,3 +119,7 @@ div#go-page {
     display: none;
     padding: 1em;
 }
+
+hr {
+    border-top: 0;
+}

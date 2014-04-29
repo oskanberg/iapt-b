@@ -91,16 +91,16 @@
                     <h4 class="modal-title" id="myModalLabel">Select your preferred recipe format</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Select the recipe format that best suits your cooking style. Your preferences will be saved:</p>
+                    <p>Cheffy can display recipes in three different formats. Select the recipe format that best suits your cooking style (your preferences will be saved):</p>
                     <div class="row">
                         <div class="col-md-4">
                             <h2>Step By Step</h2>
-                            <p>In this format the recipe is split into small steps. Each step details what you need</p>
+                            <p>In this format the recipe is split into simple steps. Each step details which ingredients you need.</p>
                             <p><a class="btn btn-default" onClick="click_format_button('Step By Step');" data-dismiss="modal" href="#" role="button">Select Format &raquo;</a></p>
                         </div>
                         <div class="col-md-4">
                             <h2>Segmented</h2>
-                            <p>In this format the recipe is segmented into easy-to-follow steps, but avoids including pre-preparation steps.</p>
+                            <p>In this format the recipe is segmented into steps, but assumes some familiarity with cooking.</p>
                             <p><a class="btn btn-default" onClick="click_format_button('Segmented');" data-dismiss="modal" href="#" role="button">Select Format &raquo;</a></p>
                         </div>
                         <div class="col-md-4">
