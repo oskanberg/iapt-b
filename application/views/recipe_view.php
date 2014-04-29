@@ -25,9 +25,9 @@
         <div class="accessibility-controls">
             <div class="container">
                 Accessibility Help:
-                <a id="high-contrast" href="">High Contrast</a>
-                <a id="larger-font" href="">Larger Font</a>
-                <a id="smaller-font" href="">Smaller Font</a>
+                <a id="high-contrast" title="click to see page in high contrast" href="">High Contrast</a>
+                <a id="larger-font" title="click to see page in a larger font" href="">Larger Font</a>
+                <a id="smaller-font" title="click to see page in a smaller font" href="">Smaller Font</a>
             </div>
         </div>
         <div class="jumbotron">
