@@ -88,7 +88,7 @@
           <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Select your preferred recipe format</h4>
+                    <h2 class="modal-title" id="myModalLabel">Select your preferred recipe format</h2>
                 </div>
                 <div class="modal-body">
                     <p>Cheffy can display recipes in three different formats. Select the recipe format that best suits your cooking style (your preferences will be saved):</p>
