@@ -70,6 +70,11 @@ ul.nav-pills li.active a:hover {
     background-image:url('http://www.bakingmad.com/wp-content/themes/bakingmad/img/pattern_white.jpg');
 }
 
+
+ul.nav-pills li.active a:focus {
+    color: #ee6600;
+}
+
 ul.nav-pills li a:hover {
     color: #ee6600;
     background-color: white;
