@@ -65,7 +65,7 @@ function populate_recipe_data(format) {
                     'href':ingredient.link,
                     'target' : '_blank',
                     'title' : 'click to view information about ' + ingredient.name,
-                    'style' : 'display:none;'
+                    'style' : 'display: none;'
                 }, 'click to view information about ' + ingredient.name).append(
                     $.el('span', {'class':'glyphicon glyphicon-new-window'})
                 )

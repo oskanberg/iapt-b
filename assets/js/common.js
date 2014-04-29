@@ -66,7 +66,7 @@ function load_style_preferences() {
 }
 
 function make_text_larger(amount) {
-    $('p, a, li').each(function () {
+    $('body, p, a, li').each(function () {
         var size = $(this).css('font-size');
         size = parseInt(size.replace('px', ''));
         size += amount;
@@ -75,7 +75,7 @@ function make_text_larger(amount) {
 }
 
 function make_text_smaller(amount) {
-    $('p, a, li').each(function () {
+    $('body, p, a, li').each(function () {
         var size = $(this).css('font-size');
         size = parseInt(size.replace('px', ''));
         size -= amount;
