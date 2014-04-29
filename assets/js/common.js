@@ -31,7 +31,7 @@ $(document).ready(function () {
         localStorage['font_size_offset'] = '0';
     } else {
         var offset = parseInt(localStorage['font_size_offset']);
-        change_text_size('offset');
+        change_text_size(offset);
     }
 
     // add link to header
