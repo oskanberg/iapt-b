@@ -44,7 +44,7 @@
         <div class="container">
             <ul class="nav nav-pills">
                 <li class="title">
-                    <a href="" data-toggle="modal" data-target=".format-explain-modal">Recipe Format: <span class="glyphicon glyphicon-question-sign"><span>
+                    <a href="" data-toggle="modal" data-target=".format-explain-modal" title="click for an explanation of the different formats">Recipe Format: <span class="glyphicon glyphicon-question-sign"><span>
                     </a>
                 </li>
                 <li class="active">
