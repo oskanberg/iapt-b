@@ -24,7 +24,7 @@ div.recipe-img-crop {
     width: 400px;
     height: 400px;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
 
 div.jumbotron {
@@ -56,12 +56,16 @@ div.carousel-caption {
 
 div.accessibility-controls {
     text-align: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    padding: 0.5em;
+    color: white;
+    background-color: black;
+    z-index: 99;
 }
 
 div.accessibility-controls a {
-    color: white;
-    padding-right: 10px;
-    padding-left: 10px;
     text-decoration: underline;
 }
 
@@ -103,4 +107,14 @@ ol.breadcrumb li.active {
 div#carousels a.btn {
     margin-top: 20px;
     margin-right: 20px;
+}
+
+div#go-page {
+    position: fixed;
+    right: 2em;
+    bottom: 2em;
+    z-index: 99;
+    cursor: pointer;
+    display: none;
+    padding: 1em;
 }

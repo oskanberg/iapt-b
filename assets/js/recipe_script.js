@@ -162,9 +162,48 @@ function build_ingredients_array(ordering) {
     return ingredients;
 }
 
+function set_up_goto_button() {
+    window.go_to_position = null;
+    $('body').append('<div id="go-page" class="light-bg outer-shadow rounded-corners" tabindex="-1">go to top</div>');
+    $(window).scroll(function () {
+        if (window.go_to_position == null)
+        {
+            // if we haven't clicked before, only show when scroll down
+            if ($(document).scrollTop() > 600) {
+                $('#go-page').fadeIn(200);
+            } else {
+                $('#go-page').fadeOut(200);
+            }
+        } else {
+            if ($(document).scrollTop() > 600) {
+                // reset
+                window.go_to_position = 0;
+            }
+            if (window.go_to_position == 0) {
+                $('#go-page').text('go to top');
+            } else {
+                $('#go-page').text('go back down');
+            }
+        }
+    });
+    $('#go-page').on('click', function () {
+        var target = window.go_to_position == null ? 0 : window.go_to_position;
+        if ($(document).scrollTop() > 600) {
+            window.go_to_position = $(document).scrollTop();
+        } else {
+            window.go_to_position = 0;
+        }
+        $('html, body').scrollTop(target);
+    });
+}
+
 $(document).ready(function () {
+    // if user has not been before
     if (localStorage['format_preference'] === undefined) {
+        // set to default in case they close modal without choosing
         localStorage['format_preference'] = default_view;
+        // display modal selection dialogue
+        $('.modal').modal();
     }
     $('a.fmt').on('click', function (event) {
         event.preventDefault();
@@ -192,4 +231,5 @@ $(document).ready(function () {
         }
     });
     request_and_build();
+    set_up_goto_button();
 });

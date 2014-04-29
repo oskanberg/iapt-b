@@ -88,14 +88,14 @@
           <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Recipe Formats Explained</h4>
+                    <h4 class="modal-title" id="myModalLabel">Select your preferred recipe format</h4>
                 </div>
                 <div class="modal-body">
                     <p>Select the recipe format that best suits your cooking style. Your preferences will be saved:</p>
                     <div class="row">
                         <div class="col-md-4">
                             <h2>Step By Step</h2>
-                            <p>In this format the recipe is split into small steps. The steps include all pre-preparation steps.</p>
+                            <p>In this format the recipe is split into small steps. Each step details what you need</p>
                             <p><a class="btn btn-default" onClick="click_format_button('Step By Step');" data-dismiss="modal" href="#" role="button">Select Format &raquo;</a></p>
                         </div>
                         <div class="col-md-4">
