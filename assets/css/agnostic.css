@@ -67,6 +67,7 @@ div.accessibility-controls {
 
 div.accessibility-controls a {
     text-decoration: underline;
+    color: white;
 }
 
 div.rounded-corners {
