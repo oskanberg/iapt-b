@@ -225,7 +225,7 @@ $(document).ready(function () {
         // notify success
         if (notify) {
             $('*[data-notify-text]').click();
-            $(this).notify('Recipe format changed', 'success', {'position' : 't'});
+            $(this).notify('Recipe format changed. Your preference has been saved.', 'success', {'position' : 't'});
         } else {
             // notify next time unless something says not to
             notify = true;
