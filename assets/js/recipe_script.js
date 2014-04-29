@@ -64,9 +64,8 @@ function populate_recipe_data(format) {
                 $.el('a', {
                     'href':ingredient.link,
                     'target' : '_blank',
-                    'title' : 'click to view information about ' + ingredient.name,
-                    'style' : 'display: none;'
-                }, 'click to view information about ' + ingredient.name).append(
+                    'title' : 'click to view information about ' + ingredient.name
+                }, '<p style="display:none">click to view information about ' + ingredient.name + '</p>').append(
                     $.el('span', {'class':'glyphicon glyphicon-new-window'})
                 )
             )
@@ -138,7 +137,7 @@ function add_step(step, format) {
                         'href':ingredient.link,
                         'target' : '_blank',
                         'title' : 'click to view information about ' + ingredient.name
-                    }).append(
+                    }, '<p style="display:none">click to view information about ' + ingredient.name + '</p>').append(
                         $.el('span', {'class':'glyphicon glyphicon-new-window'})
                     )
                 )
