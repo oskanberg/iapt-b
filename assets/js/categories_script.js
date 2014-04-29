@@ -92,7 +92,7 @@ function create_carousels(json_object) {
                         'class':'thumbnail',
                         'title' : 'click to view ' + recipe.title,
                         'style' : 'background-image:url(' + recipe.image + ')'
-                    }),
+                    }, 'click to view ' + recipe.title),
                     $.el('div', {'class':'carousel-caption'}).append(
                         $.el('a',{
                             'tabindex' : '-1',

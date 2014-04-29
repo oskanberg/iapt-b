@@ -18,6 +18,7 @@ a.thumbnail {
     min-height: 15em;
     overflow: hidden;
     background-size: cover;
+    color: transparent;
 }
 
 div.recipe-img-crop {

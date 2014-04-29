@@ -43,7 +43,7 @@ function populate_category(json_object) {
     );
 
     // Add all of the recipes
-    // Future development may like to limit this in some way
+    // Future development may like to limit the number displayed
     var $row = $('div.row');
     for (var j = 0, recipe; recipe = category.category_recipes[j++];) {
         $row.append(
@@ -53,7 +53,7 @@ function populate_category(json_object) {
                     'class':'thumbnail',
                     'title' : 'click to view ' + recipe.title,
                     'style' : 'background-image:url(' + recipe.image + ')'
-                }),
+                }, 'click to view ' + recipe.title),
                 $.el('div', {'class':'carousel-caption'}).append(
                     $.el('a',{
                         'tabindex' : '-1',
