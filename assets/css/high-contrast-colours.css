@@ -99,3 +99,7 @@ div.modal-content p, h1, h2, h3, h4 {
 a.more-button {
     color: black;
 }
+
+div#go-page {
+    color: white;
+}
