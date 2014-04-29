@@ -103,3 +103,13 @@ a.more-button {
 div#go-page {
     color: white;
 }
+
+div#carousels a.btn {
+    border-color: black;
+    color: black;
+}
+
+div#carousels a.btn:hover {
+    border-color: black;
+    color: black;
+}
