@@ -37,11 +37,13 @@ $(document).ready(function () {
         localStorage.invertBoolValue('style-regular-colours');
         load_style_preferences();
     });
-    $('#larger-font').on('click', function () {
+    $('#larger-font').on('click', function (event) {
+        event.preventDefault();
         make_text_larger(3);
     });
-    $('#smaller-font').on('click', function () {
-        make_text_larger(3);
+    $('#smaller-font').on('click', function (event) {
+        event.preventDefault();
+        make_text_smaller(3);
     });
 });
 
@@ -68,7 +70,6 @@ function make_text_larger(amount) {
         var size = $(this).css('font-size');
         size = parseInt(size.replace('px', ''));
         size += amount;
-        console.log('setting as ' + size);
         $(this).css('font-size', size + 'px');
     });
 }
