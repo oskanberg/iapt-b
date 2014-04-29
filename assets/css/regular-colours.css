@@ -48,6 +48,10 @@ ul.nav-pills li.title a {
     background-color: transparent;
 }
 
+ul.nav-pills li.title a span.glyphicon {
+    color: #ff003d;
+}
+
 ul.nav-pills li.title a:hover {
     color: black;
     background-color: transparent;

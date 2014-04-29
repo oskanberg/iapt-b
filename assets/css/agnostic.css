@@ -88,6 +88,10 @@ ul.nav-pills li a {
     border-top-left-radius: 5px;
 }
 
+ul.nav-pills li.title a {
+    text-decoration: underline;
+}
+
 ol.breadcrumb {
     margin-bottom: 5px;
     padding: 5px;
