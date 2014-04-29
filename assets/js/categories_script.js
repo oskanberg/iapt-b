@@ -20,9 +20,7 @@ function request_and_build() {
     })
     .done(create_carousels)
     .fail(function(jqXHR, status, error_thrown) {
-        alert(status);
-        alert(error_thrown);
-        // TODO: implement good usability error thing
+        $.notify('The page has failed to load. Please try again or get in contact.', {globalPosition: 'top center'});
     });
 }
 
