@@ -132,7 +132,7 @@ function add_step(step, format) {
         );
         for (var i = 0, ingredient; ingredient = step.ingredients[i++];) {
             $('ul#' + step_ingredients_id).append(
-                $.el('li', {'class' : 'list-group-item'}, ingredient.name  + ' ').append(
+                $.el('li', {'class' : 'list-group-item'}).append(
                     $.el('a', {
                         'href':ingredient.link,
                         'target' : '_blank',
