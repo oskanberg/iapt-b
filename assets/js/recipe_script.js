@@ -66,7 +66,7 @@ function populate_recipe_data(format) {
                     'target' : '_blank',
                     'title' : 'click to view information about ' + ingredient.name
                 }, ingredient.name  + ' ').append(
-                    $.el('span', {'class':'glyphicon glyphicon-new-window'}),
+                    $.el('span', {'class':'glyphicon glyphicon-new-window'})
                 )
             )
         );
@@ -138,7 +138,7 @@ function add_step(step, format) {
                         'target' : '_blank',
                         'title' : 'click to view information about ' + ingredient.name
                     }, ingredient.name  + ' ').append(
-                        $.el('span', {'class':'glyphicon glyphicon-new-window'}),
+                        $.el('span', {'class':'glyphicon glyphicon-new-window'})
                     )
                 )
             );
