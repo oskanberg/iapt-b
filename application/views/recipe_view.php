@@ -76,13 +76,11 @@
         <div id="method">
         </div>
         <hr class="featurette-divider">
-        <div class="container">
-            <hr class="featurette-divider">
-            <footer>
+        <div class="footer">
+            <div class="container">
                 <p>Copyright Cheffy 2014</p>
-            </footer>
+            </div>
         </div>
-
         <!-- modal window -->
         <div class="modal fade format-explain-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" aria-describedby="Explanation of the different recipe formats">
           <div class="modal-dialog modal-lg">

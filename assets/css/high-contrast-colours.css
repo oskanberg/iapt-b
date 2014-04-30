@@ -113,3 +113,8 @@ div#carousels a.btn:hover {
     border-color: black;
     color: black;
 }
+
+div.footer {
+    color: white;
+    background-color: black;
+}

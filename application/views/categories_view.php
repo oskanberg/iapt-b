@@ -39,11 +39,10 @@
         <div id="carousels">
         </div>
         <hr class="featurette-divider">
-        <div class="container">
-            <hr class="featurette-divider">
-            <footer>
+        <div class="footer">
+            <div class="container">
                 <p>Copyright Cheffy 2014</p>
-            </footer>
+            </div>
         </div>
     </body>
 
