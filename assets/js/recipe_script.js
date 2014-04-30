@@ -60,15 +60,14 @@ function populate_recipe_data(format) {
     var ingredients = build_ingredients_array(ordering);
     for (var i = 0, ingredient; ingredient = ingredients[i++];) {
         $('ul#ingredients-list').append(
-            $.el('li', {'class' : 'list-group-item'}, ingredient.name  + ' ').append(
-                    $.el('a', {
-                        'href':ingredient.link,
-                        'target' : '_blank',
-                        'title' : 'click to view information about ' + ingredient.name
-                    }).append(
-                        $.el('span', {'class':'glyphicon glyphicon-new-window'}),
-                        $.el('p', {'style' : 'display:none;'}, 'click to view information about ' + ingredient.name)
-                    )
+            $.el('li', {'class' : 'list-group-item'}).append(
+                $.el('a', {
+                    'href':ingredient.link,
+                    'target' : '_blank',
+                    'title' : 'click to view information about ' + ingredient.name
+                }, ingredient.name  + ' ').append(
+                    $.el('span', {'class':'glyphicon glyphicon-new-window'}),
+                )
             )
         );
     }
@@ -138,9 +137,8 @@ function add_step(step, format) {
                         'href':ingredient.link,
                         'target' : '_blank',
                         'title' : 'click to view information about ' + ingredient.name
-                    }).append(
+                    }, ingredient.name  + ' ').append(
                         $.el('span', {'class':'glyphicon glyphicon-new-window'}),
-                        $.el('p', {'style' : 'display:none;'}, 'click to view information about ' + ingredient.name)
                     )
                 )
             );
