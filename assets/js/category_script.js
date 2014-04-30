@@ -1,4 +1,4 @@
-
+// extend JQuery to allow easier HTML element creation
 $.extend({
     el: function(el, props, innerHTML) {
         var $el = $(document.createElement(el));
@@ -11,6 +11,7 @@ $.extend({
 });
 
 
+// get info from the API
 function request_and_build() {
     $.ajax({
         type: 'GET',
@@ -24,7 +25,7 @@ function request_and_build() {
     });
 }
 
-
+// categories not indexed by id, so use this to find one
 function get_category_by_id(category_id, categories_object) {
     for (var i = 0, category; category = categories_object[i++];) {
         if (category.id == category_id) return category;
@@ -32,6 +33,7 @@ function get_category_by_id(category_id, categories_object) {
     $.notify('Category could not be found. Please go back and try again.', {globalPosition: 'top center'});
 }
 
+// add data from the API to the container
 function populate_category(json_object) {
     var category_id = window.location.hash;
     category_id = category_id.replace('#', '');
@@ -69,4 +71,6 @@ function populate_category(json_object) {
     $('ol.breadcrumb li.active').text(category.name);
 }
 
+
+// go!
 request_and_build();

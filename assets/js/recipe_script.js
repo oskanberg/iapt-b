@@ -1,4 +1,6 @@
 
+
+// extend jquery with function to create new HTML elements
 $.extend({
     el: function(el, props, innerHTML) {
         var $el = $(document.createElement(el));
@@ -10,10 +12,12 @@ $.extend({
     }
 });
 
+// object from the api
 var json_object;
 var default_view = 'Step By Step';
 var notify = true;
 
+// find the right button and click it
 function click_format_button(format) {
     $('a.fmt').each(function () {
         if ($(this).text() == format) {
@@ -32,6 +36,7 @@ function request_and_build() {
         //url: 'example_json.html'
     })
     .done(function (json_obj) {
+        // cache object for later
         json_object = json_obj;
         // simulate a click on the relevant button
         // but don't notify
@@ -39,10 +44,12 @@ function request_and_build() {
         click_format_button(localStorage['format_preference']);
     })
     .fail(function(jqXHR, status, error_thrown) {
+        // something went wrong
         $.notify('The page has failed to load. Please try again or get in contact.', {globalPosition: 'top center'});
     });
 }
 
+// orderings are not indexed by their name, so this finds one for us
 function get_ordering_by_name(ordering_name, orderings_object) {
     for (var i = 0, ordering; ordering = orderings_object[i++];) {
         if (ordering.type == ordering_name) return ordering;
@@ -50,6 +57,8 @@ function get_ordering_by_name(ordering_name, orderings_object) {
     $.notify('Recipe not loaded correctly. Please try again or get in contact.', {globalPosition: 'top center'});
 }
 
+
+// add data to the page according to  a format
 function populate_recipe_data(format) {
     var recipe = json_object.recipe;
     // set title
@@ -94,6 +103,7 @@ function populate_recipe_data(format) {
 
 }
 
+// add a new step to the method
 function add_step(step, format) {
     var $method_section = $('div#method');
     // add a divider
@@ -146,6 +156,7 @@ function add_step(step, format) {
     }
 }
 
+// function to build an array of ingredients from all steps
 function build_ingredients_array(ordering) {
     var ingredients = [];
     var included_ids = [];
@@ -162,9 +173,13 @@ function build_ingredients_array(ordering) {
     return ingredients;
 }
 
+
+// add new elements, and handlers, for jump button
 function set_up_goto_button() {
     window.go_to_position = null;
+    // add the div
     $('body').append('<div id="go-page" class="light-bg outer-shadow rounded-corners" tabindex="-1">go to top</div>');
+    // whenever the page scrolls
     $(window).scroll(function () {
         if (window.go_to_position == null)
         {
@@ -175,10 +190,12 @@ function set_up_goto_button() {
                 $('#go-page').fadeOut(200);
             }
         } else {
+            // we have got a target, so must be further down the page
             if ($(document).scrollTop() > 600) {
-                // reset
+                // reset to 'jump to top'
                 window.go_to_position = 0;
             }
+            // change button text according to target
             if (window.go_to_position == 0) {
                 $('#go-page').text('go to top');
             } else {
@@ -186,6 +203,7 @@ function set_up_goto_button() {
             }
         }
     });
+    // add click handler
     $('#go-page').on('click', function () {
         var target = window.go_to_position == null ? 0 : window.go_to_position;
         if ($(document).scrollTop() > 600) {
@@ -205,6 +223,7 @@ $(document).ready(function () {
         // display modal selection dialogue
         $('.modal').modal();
     }
+    // add click handler to format tabs
     $('a.fmt').on('click', function (event) {
         event.preventDefault();
         var format = $(this).text();
@@ -230,6 +249,8 @@ $(document).ready(function () {
             notify = true;
         }
     });
+    // request from the API (asynchronous)
     request_and_build();
+    // add the jump up/down button handling
     set_up_goto_button();
 });

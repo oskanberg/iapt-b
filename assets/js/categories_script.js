@@ -1,4 +1,4 @@
-
+// extend JQuery to make element creation easier
 $.extend({
     el: function(el, props, innerHTML) {
         var $el = $(document.createElement(el));
@@ -10,7 +10,7 @@ $.extend({
     }
 });
 
-
+// Request data from the API
 function request_and_build() {
     $.ajax({
         type: 'GET',
@@ -27,6 +27,7 @@ function request_and_build() {
 
 var RECIPES_PER_SECTION = 4;
 
+// add 'carousels' (no longer actually carousels)
 function create_carousels(json_object) {
     var categories = json_object.categories;
     var $carousels = $('div#carousels');
@@ -48,7 +49,7 @@ function create_carousels(json_object) {
         var row_id = category.id + '-row-' + rows;
         var inner_id = category.id + '-inner';
 
-
+        // old code from back when there were actually carousels
         //$carousels.append(
         //    $.el('div', {'id':carousel_id, 'class':'carousel slide'}).append(
         //        $.el('div', {'id': inner_id, 'class':'carousel-inner'}).append(
@@ -59,6 +60,7 @@ function create_carousels(json_object) {
         //    )
         //);
 
+        // add an initial row
         $carousels.append(
             $.el('div', {'id':row_id,'class':'row inner-shadow'})
         );
@@ -132,4 +134,6 @@ function create_carousels(json_object) {
     }
 }
 
+
+// go!
 request_and_build();

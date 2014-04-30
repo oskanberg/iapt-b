@@ -14,12 +14,14 @@ Storage.prototype.invertBoolValue = function (key) {
     }
 };
 
+// the default preferences: true means load that stylesheet
 var default_preferences = {
     'style-high-contrast-colours' : false,
     'style-regular-colours' : true,
 };
 
 $(document).ready(function () {
+    // if we have no preference, copy the default
     if (localStorage['style-high-contrast-colours'] === undefined) {
         for (var key in default_preferences) {
             localStorage[key] = default_preferences[key];
@@ -37,8 +39,10 @@ $(document).ready(function () {
 
     // restore some font size preference
     if (localStorage['font_size_offset'] === undefined) {
+        // get default
         localStorage['font_size_offset'] = '0';
     } else {
+        // update page with stored preference
         set_text_size_to_preference();
     }
 
@@ -47,7 +51,10 @@ $(document).ready(function () {
         window.location = 'http://www-student.cs.york.ac.uk/assessments/IAPT/002/01/';
     });
     $('div.jumbotron .container h1').css('cursor', 'pointer');
+
     load_style_preferences();
+
+    // add handlers to the accessibility controls
     $('#high-contrast').on('click', function (event) {
         event.preventDefault();
         localStorage.invertBoolValue('style-high-contrast-colours');
@@ -72,6 +79,7 @@ $(document).ready(function () {
     });
 });
 
+// load the stored preferences for which stylesheets to load
 function load_style_preferences() {
     // reset
     $('link[rel="stylesheet"]').prop('disabled', false);
@@ -89,6 +97,7 @@ function load_style_preferences() {
     }
 }
 
+// find all text elements and update them to the preferred font size
 function set_text_size_to_preference() {
     $('body, p, a, li').each(function () {
         var new_size = parseInt($(this).data('default_size')) + parseInt(localStorage['font_size_offset']);
