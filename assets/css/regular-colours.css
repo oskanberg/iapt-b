@@ -105,3 +105,8 @@ a.more-button {
 ul.ingredients-list li.list-group-item a {
     color: #ee6600;
 }
+
+div.footer {
+    color: white;
+    background-color: #ee6600;
+}
