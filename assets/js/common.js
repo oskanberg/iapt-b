@@ -26,12 +26,20 @@ $(document).ready(function () {
         }
     }
 
+    // for all text elements, save their default sizes
+    $('body, p, a, li').each(function () {
+        var $this = $(this);
+        if ($this.data('default_size') === undefined) {
+            var size = $this.css('font-size').replace('px', '');
+            $this.data('default_size', parseInt(size));
+        }
+    });
+
     // restore some font size preference
     if (localStorage['font_size_offset'] === undefined) {
         localStorage['font_size_offset'] = '0';
     } else {
-        var offset = parseInt(localStorage['font_size_offset']);
-        change_text_size(offset);
+        set_text_size_to_preference();
     }
 
     // add link to header
@@ -48,19 +56,19 @@ $(document).ready(function () {
     });
     $('#larger-font').on('click', function (event) {
         event.preventDefault();
-        change_text_size(3);
         // update preference
         var offset = parseInt(localStorage['font_size_offset']);
         offset += 3;
         localStorage['font_size_offset'] = offset;
+        set_text_size_to_preference();
     });
     $('#smaller-font').on('click', function (event) {
         event.preventDefault();
-        change_text_size(-3);
         // update preference
         var offset = parseInt(localStorage['font_size_offset']);
         offset -= 3;
         localStorage['font_size_offset'] = offset;
+        set_text_size_to_preference();
     });
 });
 
@@ -79,14 +87,11 @@ function load_style_preferences() {
     } else {
         $('#high-contrast').text('High Contrast');
     }
-
 }
 
-function change_text_size(amount) {
+function set_text_size_to_preference() {
     $('body, p, a, li').each(function () {
-        var size = $(this).css('font-size');
-        size = parseInt(size.replace('px', ''));
-        size += amount;
-        $(this).css('font-size', size + 'px');
+        var new_size = parseInt($(this).data('default_size')) + parseInt(localStorage['font_size_offset']);
+        $(this).animate({fontSize : new_size + 'px'});
     });
 }
